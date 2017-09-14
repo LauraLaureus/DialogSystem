@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assets.Behaviours;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -59,6 +60,12 @@ public class DialogControl : MonoBehaviour {
         this.transform.GetChild(2).transform.GetChild(number).transform.GetChild(0).GetComponent<Text>().text = text;
     }
 
+    public void SetButtonKey(int number, string key,bool doPrompt) {
+
+        this.transform.GetChild(2).transform.GetChild(number).GetComponent<ButtonPrompterBehaviour>().nextKey = key;
+        this.transform.GetChild(2).transform.GetChild(number).GetComponent<ButtonPrompterBehaviour>().doPrompt = doPrompt;
+    }
+
     public void Clear() {
         this.dialogQueue.Clear();
     }
@@ -73,4 +80,18 @@ public class DialogControl : MonoBehaviour {
                 break;
         }
     }
+
+
+    public delegate void CloseDialogEvent();
+    public event CloseDialogEvent OnDialogEnded;
+
+    public void DialogEnded() {
+
+        if (OnDialogEnded != null) {
+            OnDialogEnded();
+        }
+
+        this.gameObject.SetActive(false);
+    }
+
 }

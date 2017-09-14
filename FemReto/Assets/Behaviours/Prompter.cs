@@ -7,6 +7,7 @@ using UnityEngine;
 
 public class Prompter : MonoBehaviour {
 
+    public string keyToStart = "start";
 
     Dialog current;
 
@@ -17,17 +18,29 @@ public class Prompter : MonoBehaviour {
 	void Start () {
         dialogControl = GameObject.Find("DialogControl");
         script = AssetDatabase.LoadAssetAtPath("Assets/DialogData.asset", typeof(DialogData)) as DialogData;
-        current = script.GetDialogByKey("start");
+        current = script.GetDialogByKey(keyToStart);
         prompt();
 	}
 
-    void prompt() {
+    public void prompt() {
 
         ParserInfo parsed = Parser.parse(current.dialog);
 
         updateControl(parsed);
 
-        //current = script.GetDialogByKey(current.details_nextKey);
+    }
+
+    public void SetNextDialog(string key, bool doPrompt = false) {
+        if (key.ToLower().Equals("exit"))
+        {
+            dialogControl.GetComponent<DialogControl>().DialogEnded();
+            return;
+        }
+
+        current = script.GetDialogByKey(key);
+
+        if (doPrompt)
+            prompt();
     }
 
     private void updateControl(ParserInfo parsed)
@@ -40,6 +53,7 @@ public class Prompter : MonoBehaviour {
         for (int i = 0; i < parsed.buttonsText.Count; i++)
         {
             control.SetButtonText(i, parsed.buttonsText[i]);
+            control.SetButtonKey(i, parsed.buttonsKeys[i], true);
         }
 
         control.SetText(parsed.dialog);
@@ -56,13 +70,13 @@ public class Prompter : MonoBehaviour {
             foreach (string statement in toParse)
             {
                 string content = statement.Substring(1);
-                content = content.Substring(0,content.Length - 2);
+                content = content.Substring(0,content.Length - 1);
                 string[] contentInfo = content.Split(' ');
 
                 if (contentInfo[0].ToLower().StartsWith("b"))
                 { //is a button
                     result.buttonsText.Add(contentInfo[2]); // Button text
-                    //TODO save the key to button dialog. Maybe an update to dictionary
+                    result.buttonsKeys.Add(contentInfo[3]);
                 }
                 
 
@@ -104,11 +118,13 @@ public class Prompter : MonoBehaviour {
     public class ParserInfo
     {
         public List<string> buttonsText;
+        public List<string> buttonsKeys;
         public string dialog;
         public int flipOption;
 
         public ParserInfo() {
             buttonsText = new List<string>();
+            buttonsKeys = new List<string>();
             flipOption = 1;
         }
     }

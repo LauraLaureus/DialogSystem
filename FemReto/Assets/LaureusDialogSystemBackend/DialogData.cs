@@ -12,7 +12,7 @@ public class DialogData : ScriptableObject {
 
     public Dialog GetDialogByKey(string key) {
 
-        return this.dialogSystem.Where<Dialog>(d => d.key == key).First();
+        return this.dialogSystem.Where<Dialog>(d => d.key.ToLower().Equals(key.ToLower())).FirstOrDefault();
        
     }
 }

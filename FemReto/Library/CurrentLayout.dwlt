@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 3}
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 521}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -40,8 +40,8 @@ MonoBehaviour:
     y: 0
     width: 436
     height: 510
-  m_MinSize: {x: 204, y: 221}
-  m_MaxSize: {x: 4004, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 20}
   m_Panes:
   - {fileID: 20}
@@ -131,8 +131,8 @@ MonoBehaviour:
     y: 30
     width: 1280
     height: 891
-  m_MinSize: {x: 713, y: 492}
-  m_MaxSize: {x: 18008, y: 14042}
+  m_MinSize: {x: 713, y: 471}
+  m_MaxSize: {x: 18008, y: 14021}
   vertical: 1
   controlID: 106
 --- !u!114 &7
@@ -156,8 +156,8 @@ MonoBehaviour:
     y: 0
     width: 1280
     height: 891
-  m_MinSize: {x: 713, y: 492}
-  m_MaxSize: {x: 18008, y: 14042}
+  m_MinSize: {x: 713, y: 471}
+  m_MaxSize: {x: 18008, y: 14021}
   vertical: 0
   controlID: 107
 --- !u!114 &8
@@ -202,8 +202,8 @@ MonoBehaviour:
     y: 0
     width: 567
     height: 441
-  m_MinSize: {x: 102, y: 121}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 15}
@@ -229,8 +229,8 @@ MonoBehaviour:
     y: 441
     width: 567
     height: 450
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -257,8 +257,8 @@ MonoBehaviour:
     y: 0
     width: 436
     height: 891
-  m_MinSize: {x: 234, y: 492}
-  m_MaxSize: {x: 10004, y: 14042}
+  m_MinSize: {x: 234, y: 471}
+  m_MaxSize: {x: 10004, y: 14021}
   vertical: 1
   controlID: 108
 --- !u!114 &12
@@ -616,9 +616,9 @@ MonoBehaviour:
     height: 489
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 
-    m_LastClickedID: 0
-    m_ExpandedIDs: e2fbffff00000000
+    m_SelectedIDs: b4250000
+    m_LastClickedID: 9652
+    m_ExpandedIDs: e2fbffff000000009e250000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -684,13 +684,13 @@ MonoBehaviour:
   m_LastFolders:
   - Assets
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\Laura\Documents\FemDevs\Sept2017\FemReto
+  m_LastProjectPath: C:\Users\Laura\Documents\DialogSystem\FemReto
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: c0240000
-    m_LastClickedID: 9408
-    m_ExpandedIDs: 00000000c02400002c25000000ca9a3bffffff7f
+    m_SelectedIDs: c2240000
+    m_LastClickedID: 9410
+    m_ExpandedIDs: 00000000c22400002e25000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -718,7 +718,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000c02400002c250000
+    m_ExpandedIDs: 00000000c22400002e250000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -745,7 +745,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: ee0500002e340000000000003e24000040240000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
